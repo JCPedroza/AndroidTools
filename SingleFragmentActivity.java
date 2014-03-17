@@ -6,7 +6,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 
 public abstract class SingleFragmentActivity extends FragmentActivity {
-	
+       
+        // Override this method to specify which fragment to use
+        // Example:
+        // @Override 
+        // protected Fragment createFragment() {
+	//     return new OneFragment(); }
+    
 	protected abstract Fragment createFragment();
 	
 	@Override
