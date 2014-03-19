@@ -7,12 +7,11 @@ import android.support.v4.app.FragmentManager;
 
 public abstract class SingleFragmentActivity extends FragmentActivity {
        
-        // Override this method to specify which fragment to use
-        // Example:
-        // @Override 
-        // protected Fragment createFragment() {
-	//     return new OneFragment(); }
-    
+    // Override this method to specify which fragment to use
+    // Example:
+    // @Override 
+    // protected Fragment createFragment() {
+	// return OneFragment.newInstance(<data>); }
 	protected abstract Fragment createFragment();
 	
 	@Override
@@ -31,3 +30,11 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
 	}
 	
 }
+
+// Notes: 
+
+// Working with Fragment Arguments:
+// This activity needs to send the intent extras to its fragment. 
+// Retrieve them using <Type> data = (<Type>) getIntent().get<Type>Extra(<extra id>)
+// Then pass it as the argument of the fragment's factory method:
+//     OneFragment.newInstance(<data>)
